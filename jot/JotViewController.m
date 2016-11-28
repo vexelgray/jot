@@ -7,7 +7,6 @@
 //
 
 #import "JotViewController.h"
-#import "JotDrawView.h"
 #import "JotTextView.h"
 #import "JotTextEditView.h"
 #import <Masonry/Masonry.h>
@@ -21,7 +20,7 @@
 @property (nonatomic, strong) UIRotationGestureRecognizer *rotationRecognizer;
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
 @property (nonatomic, strong, readwrite) JotDrawingContainer *drawingContainer;
-@property (nonatomic, strong) JotDrawView *drawView;
+
 @property (nonatomic, strong) JotTextEditView *textEditView;
 @property (nonatomic, strong) JotTextView *textView;
 
@@ -244,6 +243,11 @@
 }
 
 #pragma mark - Undo
+
+- (void)undo
+{
+    [self.drawView undoLastStroke];
+}
 
 - (void)clearAll
 {

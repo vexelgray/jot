@@ -16,6 +16,17 @@
  */
 @interface JotTextView : UIView
 
+@property (nonatomic, strong) UILabel *textLabel;
+@property (nonatomic, strong) UIView *textEditingContainer;
+@property (nonatomic, strong) UITextView *textEditingView;
+@property (nonatomic, assign) CGAffineTransform referenceRotateTransform;
+@property (nonatomic, assign) CGAffineTransform currentRotateTransform;
+@property (nonatomic, assign) CGPoint referenceCenter;
+@property (nonatomic, strong) UIPinchGestureRecognizer *activePinchRecognizer;
+@property (nonatomic, strong) UIRotationGestureRecognizer *activeRotationRecognizer;
+@property (nonatomic, assign) CGFloat scale;
+@property (nonatomic, assign) CGRect labelFrame;
+
 /**
  *  The text string the JotTextView is currently displaying.
  *

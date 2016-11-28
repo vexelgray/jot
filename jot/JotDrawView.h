@@ -15,6 +15,7 @@
  */
 @interface JotDrawView : UIView
 
+@property (nonatomic, strong) NSMutableArray *strokeHistoryArray;
 /**
  *  Set to YES if you want the stroke width to be constant,
  *  NO if the stroke width should vary depending on drawing
@@ -41,6 +42,11 @@
  *  to control this setting.
  */
 @property (nonatomic, strong) UIColor *strokeColor;
+
+/**
+ *  Undos previous stroke.
+ */
+- (void)undoLastStroke;
 
 /**
  *  Clears all paths from the drawing, giving a blank slate.

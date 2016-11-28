@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "JotDrawView.h"
 
 /**
  *  The possible states of the JotViewController
@@ -53,6 +54,8 @@ typedef NS_ENUM(NSUInteger, JotViewState){
  *  for a photo annotation interface.
  */
 @interface JotViewController : UIViewController
+
+@property (nonatomic, strong) JotDrawView *drawView;
 
 /**
  *  The delegate of the JotViewController instance.
@@ -159,6 +162,11 @@ typedef NS_ENUM(NSUInteger, JotViewState){
 
 
 @property (nonatomic, strong, readonly) JotDrawingContainer *drawingContainer;
+
+/**
+ *  Undoes previous stroke
+ */
+- (void)undo;
 
 /**
  *  Clears all paths from the drawing in and sets the text to an empty string, giving a blank slate.
